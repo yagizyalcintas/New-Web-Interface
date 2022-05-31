@@ -1,0 +1,372 @@
+<div id="box" class="row main-container applications d-none">
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel1-name" >Mussel 1</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m1" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Open</span>
+                    <img src="{% static "images/mussel_green.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:95%;'>95%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id = "mussel1-data" style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1739 mV</span> </br>
+
+                            85.00%</span> </br>
+
+                            12</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-1"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="box-footer unselectable " id= "box-footer1" >Last updated: 2 minutes ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel2-name" >Mussel 2</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m2" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:15%;'>15%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id= "mussel2-data" style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1633 mV</span> </br>
+
+                            35%</span> </br>
+
+                            41</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-2"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="box-footer unselectable" id= "box-footer2">Last updated: 10 seconds ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel3-name" >Mussel 3</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers"  id="box-m3" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:19%;'>19%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8"  style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id="mussel3-data" style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1661 mV</span> </br>
+
+                            65%</span> </br>
+
+                            52</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-3"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="box-footer unselectable" id= "box-footer3">Last updated: 1 week ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel4-name" >Mussel 4</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m4" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:10%;'>10%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id="mussel4-data"  style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1600 mV</span> </br>
+
+                            65%</span> </br>
+
+                            52</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-4"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="box-footer unselectable" id= "box-footer4">Last updated: 32 minutes ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel5-name" >Mussel 5</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m5" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:10%;'>10%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id="mussel5-data"  style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1600 mV</span> </br>
+
+                            65%</span> </br>
+
+                            52</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-5"><i class="fas fa-chart-bar"></i></button>
+                        <script>
+                            document.getElementById("graph-btn-5").onclick = function() {myFunction2()};
+                            
+                            function myFunction2() {
+                                console.log("AAAAAAAAAAAAAAABBBBBBBBBBBBBCCCCCCCCCCCC");
+                            }
+                            </script>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <p class="box-footer unselectable " id= "box-footer5">Last updated: 12 minutes ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel6-name" >Mussel 6</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m6" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Open</span>
+                    <img src="{% static "images/mussel_green.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:80%;'>80%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4"  id="mussel6-data"  style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1710 mV</span> </br>
+
+                            35%</span> </br>
+
+                            41</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-6"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <p class="box-footer unselectable " id= "box-footer6">Last updated: 9 minutes ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel7-name" >Mussel 7</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m7" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:10%;'>10%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id="mussel7-data"  style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1600 mV</span> </br>
+
+                            65%</span> </br>
+
+                            52</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-7"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <p class="box-footer unselectable " id= "box-footer7">Last updated: 9 minutes ago</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-container">
+            <p class="box-title unselectable" id="mussel8-name" >Mussel 8</p>
+            <div class="row mussel-container unselectable">
+                <div class="col-md-4 mussel-dividers" id="box-m8" style="padding-left:10px;padding-top: 50px;">
+                    <span style="font-size: 2em;
+                    font-weight: 900;
+                    margin-left: 40px;">Closed</span>
+                    <img src="{% static "images/mussel_red.png" %}" style="width: 100%;
+                    margin-left: 15px;">
+                </div>
+                <div class="col-md-1 mussel-dividers">
+                    <div class="loadbar" style="margin-top:20px">
+                        <strong class="bar" style='height:10%;'>10%</strong>
+                    </div>
+                </div>
+                <div class="col-md-7 mussel-dividers" style="font-size:1.4em;">
+                    </br>
+                    <div class="row">
+                        <div class="col-md-8" style="padding-right:0px;padding-left:30px;text-align:left;line-height:2">
+                            <b>Hall Voltage:</b> </br>
+                            <b>Filt. Activity:</b> </br>
+                            <b>Filt. Frequency:</b></br>
+                        </div>
+                        <div class="col-md-4" id="mussel8-data"  style="padding-right:5px;padding-left:0px;text-align:left;line-height:2">
+
+                            1600 mV</span> </br>
+
+                            65%</span> </br>
+
+                            52</span></br>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button type="button" class="btn btn-dark" id="graph-btn-8"><i class="fas fa-chart-bar"></i></button>
+                        <script>
+                            document.getElementById("graph-btn-8").onclick = function() {myFunction()};
+                            
+                            function myFunction() {
+                                console.log("AAAAAAAAAAAAAAABBBBBBBBBBBBBCCCCCCCCCCCC");
+                            }
+                            </script>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-file-export"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-brain"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </div>
+            <p class="box-footer unselectable " id= "box-footer8">Last updated: 12 minutes ago</p>
+        </div>
+    </div>
+</div>
