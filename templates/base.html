@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static  %}
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Latest compiled moments.js -->
+
+    <!-- Latest compiled bootstrap datetime.js -->
+   
+    
+    {% comment %} <script src="{% static "js/bootstrap-datetimepicker.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/bootstrap-datetimepicker.min.css"%}"> {% endcomment %}
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- Bootstrap select -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled chartJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script> 
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>  {% endcomment %}
+    <!-- Font aweasome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- css sheet -->
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <!-- datetime picker sheet -->
+    <link rel="stylesheet" href="{% static "css/bootstrap-datetimepicker.min.css"%}">
+    <!-- bootstrap sliders-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap" rel="stylesheet">
+    <script src="{% static "js/plugins/autocolor.js"%}"></script>
+    <script src="{% static "js/plugins/background.js"%}"></script>
+    <script src="{% static "js/plugins/zoom.js"%}"></script>
+    <!-- Initial Config -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internet of Biosphere</title>
+    <meta charset="utf-8">
+</head>
+<script>
+    var csrfToken = "{{ csrf_token }}";
+</script>
+<body>
+    {% include "menu.html" %}
+    {% comment %} Menus {% endcomment %}
+    {% include "dashboard/dashboard-menu.html" %}
+    {% include "box/box-menu.html" %}
+    {% comment %} Containers {% endcomment %}
+    {% include "dashboard/dashboard.html" %}
+    {% include "dashboard/googlemaps.html" %}
+    {% include "box/box.html" %}
+    {% include "box/graphs.html" %}
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footerItem unselectable">© 2021 ECOSOPH GmbH, All rights reserved.</p>
+    </div>
+</body>
+
+<script type="text/javascript" src="{% static "js/mussels.js" %}"></script>

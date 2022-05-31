@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static  %}
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Css sheet -->
+    <link rel="stylesheet" href="{% static "css/login.css" %}">
+
+    <!-- Initial config -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IoB Database</title>
+
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <!-- Background Image-->
+    <div class="bg-image" style="background-image: url( {% static "images/background.jpg" %} ); "></div>
+
+    <div class="col-sm-6 col-md-8"></div>
+    <div class="bg-text col-sm-6 col-md-4">
+        <img class="img-fluid" src="{% static "images/logo.png" %}" alt="Ecosoph logo">
+        <p style="color:red"> {{ warning_message }} </p>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                {{ form.Username}}
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                {{ form.Password}}
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    {{ form.Remember}} Remember me
+                </label>
+            </div>
+            <button type="submit" value="login" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-sm-6 col-md-8"></div>
+</body>
+
+</html>
