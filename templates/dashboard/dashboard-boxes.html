@@ -1,0 +1,59 @@
+{% for box in boxes %}
+<div class="col-md-3 dashboard-card" id= "{{box.id}}">
+     <div class="box-container">
+        <p class="box-title unselectable">Box {{box.id}}</p>
+        <div class="row mussels-container unselectable">
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}1">
+                <img src="{% static "images/mussel_purple.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}2">
+                <img src="{% static "images/mussel_green.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}3">
+                <img src="{% static "images/mussel_pink.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}4">
+                <img src="{% static "images/mussel_purple.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}5">
+                <img src="{% static "images/mussel_green.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}6">
+                <img src="{% static "images/mussel_green.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}7">
+                <img src="{% static "images/mussel_green.png" %}" style="width:100%;">
+            </div>
+            <div class="col-md-3 mussel-dividers" id = "m{{box.id}}8">
+                <img src="{% static "images/mussel_pink.png" %}" style="width:100%;">
+            </div>
+        </div>
+        <p class="box-footer unselectable" id = "footer{{box.id}}"> Last updated: </p>
+    </div> 
+</div>
+{% endfor %}
+
+<script>
+    var csrfToken = "{{ csrf_token }}";
+</script>
+
+
+{% comment %} {% for box in boxes %}
+<div class="col-md-3 dashboard-card">
+     <div class="box-container">
+        <p class="box-title unselectable">Box {{box.id}}</p>
+        <div class="row mussels-container unselectable">
+            {% for box in boxes %}   
+            <div class="col-md-3 mussel-dividers" id = "m1">
+                <img src="{% static "images/mussel_purple.png" %}" style="width:100%;">
+            </div>
+            {% endfor %}
+        </div>
+        <p class="box-footer unselectable" id = "footer{{box.id}}"> Last updated: </p>
+    </div> 
+</div>
+{% endfor %}
+
+<script>
+    var csrfToken = "{{ csrf_token }}";
+</script> {% endcomment %}
