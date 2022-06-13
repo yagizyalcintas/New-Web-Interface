@@ -84,6 +84,10 @@ function Loop_boxes() {
             httpRequest2.send();
             httpRequest2.onreadystatechange = function () {
                 if (httpRequest2.readyState === XMLHttpRequest.DONE) {
+                    // if ($(".loader").addClass("d-none")) {
+                    //     console.log("en of loop boxes");
+                    // }
+
                     value = (httpRequest2.response);
                     console.log("getLastUpdated response is: " + typeof (value) + value.length);
                     var details = JSON.parse(value);
@@ -110,6 +114,7 @@ function Loop_boxes() {
                     }
                     $(".dashboard-card").off('click');
                     $(".dashboard-card").on('click', show_mussel);
+                    $(".loader").addClass("d-none")
 
 
 
@@ -117,8 +122,6 @@ function Loop_boxes() {
             };
         }
     };
-
-
 
 
 
@@ -166,7 +169,7 @@ function group_mussels_names(id) {
 
             setInterval(() => {
                 group_mussels_datas(id)
-            }, 15000);
+            }, 35000);
         }
     };
 }
@@ -204,15 +207,15 @@ function group_mussels_datas(id) {
                 value = (httpRequest3.response);
                 //console.log("getLastUpdated response for group 1 is: " + typeof (value) + value.length);
                 var details = JSON.parse(value);
-                console.log("timestamps:" + typeof (details) + JSON.stringify(details));
+                //console.log("timestamps:" + typeof (details) + JSON.stringify(details));
                 for (var i = 1; i < 9; i++) {
-                    console.log(parseInt(details.timestamps[i]));
+                    //console.log(parseInt(details.timestamps[i]));
                     $(`#box-footer${parseInt(i)}`).html("Last Updated: " + approximateTimeDiff(details.timestamps[i])); //${key}
 
                 };
                 for (var i = 1; i < 9; i++) {
-                    console.log("details.status[1]");
-                    console.log(details.status[1]);
+                    // console.log("details.status[1]");
+                    // console.log(details.status[1]);
                     if (details.status[i] == -1) {
                         $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 2em;
                         font-weight: 900;
