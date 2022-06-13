@@ -7,7 +7,7 @@ var dataArray5 = [];
 var dataArray6 = [];
 var dataArray7 = [];
 var dataArray8 = [];
-var firstTimestamp = 1651100000;
+var firstTimestamp = 1651100000; //1649166721
 var lastTimestamp = 0;
 
 
@@ -49,6 +49,14 @@ function drawStatistics(data) {
 
 function drawGraph(datas) {
     myChart.destroy();
+    dataArray1 = [];
+    dataArray2 = [];
+    dataArray3 = [];
+    dataArray4 = [];
+    dataArray5 = [];
+    dataArray6 = [];
+    dataArray7 = [];
+    dataArray8 = [];
     //var ctx2 = $('#graph-canvas');
     console.log("DRAWGRAPH ARGUMENT -DATAS-: ");
     console.log(JSON.stringify(datas));
@@ -64,16 +72,26 @@ function drawGraph(datas) {
     //     return countries[key];
     // });
     for (const [i, element] of Object.entries(datas)) {
-        // console.log("element");
-        // console.log(element);
+        console.log("element");
+        console.log(element);
         //var dataArr = [];
         for (entry in element) {
-            // console.log("entry");
-            // console.log(entry);
+            console.log("entry");
+            console.log(entry);
             if (entry < firstTimestamp) {
+                console.log("entry smaller");
+                console.log("firstTimestamp");
+                console.log(firstTimestamp);
+                console.log("entry");
+                console.log(entry);
                 firstTimestamp = entry;
             }
             if (entry > lastTimestamp) {
+                console.log("entry bigger");
+                console.log("firstTimestamp");
+                console.log(firstTimestamp);
+                console.log("entry");
+                console.log(entry);
                 lastTimestamp = entry;
             }
             eval("dataArray" + i).push({ x: new Date(parseInt(entry * 1000)), y: element[entry] }); //new Date()
@@ -90,8 +108,8 @@ function drawGraph(datas) {
             lineTension: 0.1,
 
         });
-        // console.log("chartData: ");
-        // console.log(chartData);
+        console.log("chartData: ");
+        console.log(chartData);
     }
 
     // rgb(204, 209, 220)
