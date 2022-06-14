@@ -11,7 +11,10 @@ var firstTimestamp = 1651100000; //1649166721
 var lastTimestamp = 0;
 
 
-$("#graph-loading").removeClass("d-none");
+
+
+
+//$("#graph-loading").removeClass("d-none");
 $("#graph-space").addClass("d-none");
 $("#graph-space").append('<canvas id="graph-canvas"></canvas>'); //style="height:550, width:1400px"
 //document.getElementById("graph-space").style.height = "900px";
@@ -50,6 +53,12 @@ function drawStatistics(data) {
 }
 
 function drawGraph(datas) {
+    $("#graphs-btn-live").removeClass("d-none");
+    $("#graphs-btn-hour").removeClass("d-none");
+    $("#graphs-btn-12hours").removeClass("d-none");
+    $("#graphs-btn-day").removeClass("d-none");
+    $("#graphs-btn-week").removeClass("d-none");
+    $("#graphs-btn-month").removeClass("d-none");
     myChart.destroy();
     dataArray1 = [];
     dataArray2 = [];
