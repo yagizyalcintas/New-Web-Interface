@@ -13,7 +13,9 @@ var lastTimestamp = 0;
 
 $("#graph-loading").removeClass("d-none");
 $("#graph-space").addClass("d-none");
-$("#graph-space").append('<canvas id="graph-canvas"></convas>');
+$("#graph-space").append('<canvas id="graph-canvas"></canvas>'); //style="height:550, width:1400px"
+//document.getElementById("graph-space").style.height = "900px";
+//document.getElementById("graph-canvas").style.height = "500px";
 var ctx = $('#graph-canvas');
 var myChart = new Chart(ctx, {
     type: 'bar',
