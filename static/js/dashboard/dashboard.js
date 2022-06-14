@@ -192,7 +192,9 @@ function group_mussels_datas(id) {
             console.log(typeof (data));
             for (var i = 1; i < 9; i++) {
                 console.log("3")
-                $(`#mussel${i}-data`).html(data[`${i}`] + " mV");
+                $(`#mussel${i}-data`).html(`<b>Voltage: ${data[`${i}`]}mV</b> </br>
+                                            <b>Filt. Activity:</b> </br>
+                                            <b>Filt. Frequency:</b></br>`); //${data[`${i}`]} mV </span> </br>
             }
         }
 
@@ -217,23 +219,23 @@ function group_mussels_datas(id) {
                     // console.log("details.status[1]");
                     // console.log(details.status[1]);
                     if (details.status[i] == -1) {
-                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 2em;
+                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 15px;
                         font-weight: 900;
-                        margin-left: 40px;">Disconnected</span>
+                        margin-left: 25px;">Disconnected</span>
                         <img src="${"static/images/mussel_purple.png"}" style="width: 100%;
                         margin-left: 15px;">`)
                     };
                     if (details.status[i] == 0) {
-                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 2em;
+                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 15px;
                         font-weight: 900;
-                        margin-left: 40px;">Closed</span>
+                        margin-left: 25px;">Closed</span>
                         <img src="${"static/images/mussel_red.png"}" style="width: 100%;
                         margin-left: 15px;">`)
                     };
                     if (details.status[i] == 1) {
-                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 2em;
+                        $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 15px;
                         font-weight: 900;
-                        margin-left: 40px;">Open</span>
+                        margin-left: 25px;">Open</span>
                         <img src="${"static/images/mussel_green.png"}" style="width: 100%;
                         margin-left: 15px;">`)
                     };
