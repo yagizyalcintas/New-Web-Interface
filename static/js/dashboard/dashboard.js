@@ -1,9 +1,9 @@
 
-Loop_boxes();
+Loop_boxes(); ////////////////////77
 
 
 
-function show_mussel() {
+function show_mussel() { //shows the inner interface of box when clicked on it
     //TODO: Add class instead of manually specifying
     $(".main-container").addClass("d-none");
     $(".sub-menu").addClass("d-none");
@@ -24,70 +24,26 @@ function show_mussel() {
 }
 
 var k = 0;
-// setInterval(function () {
-//     var httpRequest = new XMLHttpRequest();
-//     httpRequest.open("GET", "/groupsData/" + 1, true); // false for synchronous request
-//     //httpRequest.open("GET", "/showBox/", true);
-//     httpRequest.setRequestHeader('X-CSRFToken', csrfToken);
-//     httpRequest.responseType = 'text';
-//     httpRequest.send();
-//     httpRequest.onreadystatechange = function () {
-//         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-//             value = (httpRequest.responseText);
-//             //console.log("response is: " + value)
-//             var details = JSON.parse(value);
-//             console.log(details);
-//             //console.log("response details:" + JSON.stringify(value))
-//             //document.getElementById("footer1").innerHTML = JSON.stringify(value)
-//             console.log("groupsData:" + typeof (value) + JSON.stringify(value));
-//             console.log(typeof (value));
-//         }
-//         for (var i = 1; i < 9; i++) {
-//             $(`#mussel${i}-data`).html(names[`${i}`])
-//         }
-//     };
-//     // document.getElementById("footer1").innerHTML = `Last updated: ${k} minutes ago`;
-//     // element.value = k;
-//     // $("#footer1").val(JSON.stringify(k));
-//     // k++;
-
-//     //response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-//     //AttributeError: 'dict' object has no attribute 'headers'
-
-
-
-// }, 10000);
-//$("#footer1")
-
 
 
 function Loop_boxes() {
 
-    //     MAKE REQUEST TO VIEWS AND GET THE RENDERED HTML
+
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", "/showBox/", true);
+    httpRequest.open("GET", "/showBox/", true); //adds boxes to the dashboard
     httpRequest.setRequestHeader('X-CSRFToken', csrfToken);
-    //httpRequest.responseType = 'document';
     httpRequest.send();
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             value = (httpRequest.response);
-            //console.log("response is: " + value)
-            //var details = JSON.parse(value);
-            //console.log("number of boxes:" + typeof (value) + JSON.stringify(value));
             $("#dashboard").append(value);
-
             var httpRequest2 = new XMLHttpRequest();
-            httpRequest2.open("GET", "/getLastUpdated/", true);
+            httpRequest2.open("GET", "/getLastUpdated/", true); //puts the last updated field under boxes but it is taken as a static value from database as a field (as requested)
             httpRequest2.setRequestHeader('X-CSRFToken', csrfToken);
             //httpRequest.responseType = 'document';
             httpRequest2.send();
             httpRequest2.onreadystatechange = function () {
-                if (httpRequest2.readyState === XMLHttpRequest.DONE) {
-                    // if ($(".loader").addClass("d-none")) {
-                    //     console.log("en of loop boxes");
-                    // }
-
+                if (httpRequest2.readyState === XMLHttpRequest.DONE) { //puts the corrects color image according to last update
                     value = (httpRequest2.response);
                     console.log("getLastUpdated response is: " + typeof (value) + value.length);
                     var details = JSON.parse(value);
@@ -96,7 +52,7 @@ function Loop_boxes() {
                         console.log(parseInt(key) + 1);
                         console.log("details.status[1]");
                         console.log(details.status[1]);
-                        $(`#footer${parseInt(key) + 1}`).html("Last Updated: " + approximateTimeDiff(value)); //${key}
+                        $(`#footer${parseInt(key) + 1}`).html("Last Updated: " + approximateTimeDiff(value));
                         for (var i = 1; i < 9; i++) {
                             if (details.status[parseInt(key) + 1][i] == -1) {
                                 $(`#m${(parseInt(key) + 1)}${i}`).html(`<img src='${"static/images/mussel_purple.png"}' style="width:100%;">`)
@@ -107,7 +63,7 @@ function Loop_boxes() {
                             if (details.status[parseInt(key) + 1][i] == 1) {
                                 $(`#m${(parseInt(key) + 1)}${i}`).html(`<img src='${"static/images/mussel_green.png"}' style="width:100%;">`)
                             };
-                            //$(`#m${(parseInt(key) + 1)}${i}`).html(`<img src='${"static/images/mussel_green.png"}' style="width:100%;">`)
+
                         }
 
 
@@ -116,17 +72,10 @@ function Loop_boxes() {
                     $(".dashboard-card").on('click', show_mussel);
                     $(".loader").addClass("d-none")
 
-
-
                 }
             };
         }
     };
-
-
-
-    //     $("#dashboard").append()...
-
 }
 
 
@@ -148,18 +97,16 @@ function approximateTimeDiff(ending) {
 }
 
 
-function group_mussels_names(id) {
+function group_mussels_names(id) { //put mussel names when clicked on boxes according to box number and mussel number. box number:2 muss num:3 --> m23. Also updates mussel data every X seconds. (currently 35)
 
     console.log("1")
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", "/box_mussels_names/" + id, true); // false for synchronous request
-    //httpRequest.open("GET", "/showBox/", true);
+    httpRequest.open("GET", "/box_mussels_names/" + id, true);
     httpRequest.setRequestHeader('X-CSRFToken', csrfToken);
     httpRequest.send();
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             value = (httpRequest.responseText);
-            //console.log("response is: " + value)
             var names = JSON.parse(value);
             console.log("mussel name 2.: " + names['2']);
             console.log(typeof (names));
@@ -175,31 +122,27 @@ function group_mussels_names(id) {
 }
 
 function group_mussels_datas(id) {
-    console.log("2")
 
-    var httpRequest2 = new XMLHttpRequest();
-    httpRequest2.open("GET", "/box_mussels_data/" + id, true); // false for synchronous request
-    //httpRequest.open("GET", "/showBox/", true);
+    var httpRequest2 = new XMLHttpRequest(); //adds the voltage values for mussels
+    httpRequest2.open("GET", "/box_mussels_data/" + id, true);
     httpRequest2.setRequestHeader('X-CSRFToken', csrfToken);
     httpRequest2.send();
     httpRequest2.onreadystatechange = function () {
         if (httpRequest2.readyState === XMLHttpRequest.DONE) {
             value = (httpRequest2.responseText);
             var data = (JSON.parse(value));
-            //console.log("response details:" + JSON.stringify(value))
-            //document.getElementById("footer1").innerHTML = JSON.stringify(value)
             console.log("box_mussels_data:" + typeof (data) + JSON.stringify(data));
             console.log(typeof (data));
             for (var i = 1; i < 9; i++) {
                 console.log("3")
                 $(`#mussel${i}-data`).html(`<b>Voltage: ${data[`${i}`]}mV</b> </br>
                                             <b>Filt. Activity:</b> </br>
-                                            <b>Filt. Frequency:</b></br>`); //${data[`${i}`]} mV </span> </br>
+                                            <b>Filt. Frequency:</b></br>`);
             }
         }
 
         var httpRequest3 = new XMLHttpRequest();
-        httpRequest3.open("GET", "/groupsData/" + id, true);
+        httpRequest3.open("GET", "/groupsData/" + id, true); //gets the satus array and puts the correct image according to status value
         httpRequest3.setRequestHeader('X-CSRFToken', csrfToken);
 
         httpRequest3.send();
@@ -207,17 +150,13 @@ function group_mussels_datas(id) {
             if (httpRequest3.readyState === XMLHttpRequest.DONE) {
                 console.log("4")
                 value = (httpRequest3.response);
-                //console.log("getLastUpdated response for group 1 is: " + typeof (value) + value.length);
-                var details = JSON.parse(value);
-                //console.log("timestamps:" + typeof (details) + JSON.stringify(details));
-                for (var i = 1; i < 9; i++) {
-                    //console.log(parseInt(details.timestamps[i]));
-                    $(`#box-footer${parseInt(i)}`).html("Last Updated: " + approximateTimeDiff(details.timestamps[i])); //${key}
 
+                var details = JSON.parse(value);
+
+                for (var i = 1; i < 9; i++) {
+                    $(`#box-footer${parseInt(i)}`).html("Last Updated: " + approximateTimeDiff(details.timestamps[i])); //${key}
                 };
                 for (var i = 1; i < 9; i++) {
-                    // console.log("details.status[1]");
-                    // console.log(details.status[1]);
                     if (details.status[i] == -1) {
                         $(`#box-m${parseInt(i)}`).html(`<span style="font-size: 15px;
                         font-weight: 900;
@@ -239,7 +178,7 @@ function group_mussels_datas(id) {
                         <img src="${"static/images/mussel_green.png"}" style="width: 100%;
                         margin-left: 15px;">`)
                     };
-                    //$(`#m${(parseInt(key) + 1)}${i}`).html(`<img src='${"static/images/mussel_green.png"}' style="width:100%;">`)
+
                 };
             };
         };
