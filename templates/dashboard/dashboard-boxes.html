@@ -38,22 +38,3 @@
 </script>
 
 
-{% comment %} {% for box in boxes %}
-<div class="col-md-3 dashboard-card">
-     <div class="box-container">
-        <p class="box-title unselectable">Box {{box.id}}</p>
-        <div class="row mussels-container unselectable">
-            {% for box in boxes %}   
-            <div class="col-md-3 mussel-dividers" id = "m1">
-                <img src="{% static "images/mussel_purple.png" %}" style="width:100%;">
-            </div>
-            {% endfor %}
-        </div>
-        <p class="box-footer unselectable" id = "footer{{box.id}}"> Last updated: </p>
-    </div> 
-</div>
-{% endfor %}
-
-<script>
-    var csrfToken = "{{ csrf_token }}";
-</script> {% endcomment %}
