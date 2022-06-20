@@ -18,7 +18,9 @@ def get_mussel_groups_overview(request):
     return data
 
 
-def get_mussel_data(request, id):  # , from_timestamp, to_timestamp
+def get_mussel_data(
+    request, id
+):  # , from_timestamp, to_timestamp |||||||||||||||||||||||NOT BEING USED
     mussel = Mussel.objects.get(id=id, user=request.user)
     data = mussel.get_data(1649159374, 1651142483)
     print("get muss daa")
@@ -31,11 +33,13 @@ def get_mussel_group_data(
 ):  # brings the last voltage values of all mussels in a particular box
     # print(request.headers)
     mussel_group = MusselGroupsMan.objects.get(id=id, user=request.user)
-    data = mussel_group.get_mussels_voltage()
+    data = (
+        mussel_group.get_mussels_voltage()
+    )  #############DIFFERENT FUNCTION BEING USED
     return HttpResponse(json.dumps(data))
 
 
-def get_mussel_group_names(request, id):
+def get_mussel_group_names(request, id):  #########################
     mussel_group = MusselGroupsMan.objects.get(id=id, user=request.user)
     names = mussel_group.get_mussels_name()
     return HttpResponse(json.dumps(names))
@@ -46,7 +50,7 @@ def get_mussel_group_names(request, id):
 #         last_mussels_group_data = mussel_group.get_mussels_data()
 
 
-def get_mussel_group_timestamps(
+def get_mussel_group_timestamps(  ###########################
     request, id
 ):  # brings last timestamps and status for all mussels in a particular group
     # print(request.headers)
@@ -100,7 +104,7 @@ def draw_mussel_graph(request, id, from_timestamp, to_timestamp):
     return json.dumps(data)
 
 
-def draw_mussel_graph_all(request, id):
+def draw_mussel_graph_all(request, id):  ##########################
     mussel_group = MusselGroupsMan.objects.get(id=id, user=request.user)
     data = mussel_group.get_group_all_data()
     print("get_group_all_data: ")
@@ -120,13 +124,15 @@ def draw_mussel_graph_all(request, id):
     return HttpResponse(json.dumps(new_dict))
 
 
-def draw_mussel_particular_graph(request, boxId, mussId, interval):
+def draw_mussel_particular_graph(
+    request, boxId, mussId, interval
+):  ##########################
     mussel_group = MusselGroupsMan.objects.get(id=boxId, user=request.user)
 
     data = mussel_group.get_particular_mussel_data(mussId, interval)
     print("draw_mussel_particular_graph: ")
     print(
-        data
+        data  # <QuerySet [<Data: $2022-04-05 11:51:18+00:00 - $1500>]>
     )  # {5: <QuerySet [<Data: $2022-04-05 11:50:18+00:00 - $1500>, <Data: $2022-04-05 13:50:43+00:00 - $1600>]>}
     new_dict = {}
 
@@ -156,7 +162,7 @@ def recieve_data(request):
         new_data.save()
 
 
-def show_boxes(request):
+def show_boxes(request):  ##########################
     boxes = MusselGroupsMan.objects.filter(user=request.user)
 
     boxes_dict = {"boxes": boxes}
