@@ -1,4 +1,4 @@
-<div id="box-menu" class="boxes-container sub-menu d-none">
+<div id="box-menu" class="boxes-container sub-menu d-none"> {% comment %}added id{% endcomment %}
     <ul class="nav nav-pills justify-content-center">
         <li class="nav-item">
             <a id="box-menu-btn-dashboard" class="nav-link active sub-menu-item unselectable" data-toggle="pill">
@@ -32,4 +32,4 @@
         </li>
     </ul>
 </div>
-<script defer type="text/javascript" src="{% static "js/box/box-menu.js" %}"></script>
+<script defer type="text/javascript" src="{% static "js/box/box-menu.js" %}"></script> {% comment %}added "defer" key to make graph button work{% endcomment %}
