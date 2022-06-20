@@ -82,7 +82,7 @@ function drawGraph(datas) {
     // var vals = Object.keys(countries).map(function(key) {
     //     return countries[key];
     // });
-    for (const [i, element] of Object.entries(datas)) {
+    for (const [i, element] of Object.entries(datas)) { //keeping the track of the last timestamp to preserve the order and potentially use it later
         console.log("element");
         console.log(element);
         //var dataArr = [];
@@ -156,7 +156,7 @@ function drawGraph(datas) {
                 }
             }
         },
-        // maintainAspectRatio: false,
+        // maintainAspectRatio: false,  //THIS SECTION IS COMMENTED OUT
         // elements: {
         //     point: {
         //         radius: 0
@@ -165,7 +165,7 @@ function drawGraph(datas) {
 
     },
     );
-    $("#graph-loading").addClass("d-none");
+    $("#graph-loading").addClass("d-none"); //in original code it was ".graph-loading" 
     $("#graph-space").removeClass("d-none");
 }
 
